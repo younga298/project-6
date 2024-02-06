@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        //
+        $(function () {
+            $(".cardwrap").not(":first").hide();
+
+            $('.button:first-of-type').click(function () {
+                $('.button').css({ "background-color": "transparent" })
+                $(this).css({ "background-color": "#5fb4c9" })
+                $(".cardwrap:nth-of-type(2)").fadeIn('slow');
+                $(".cardwrap:nth-of-type(3)").hide();
+                $(".cardwrap:nth-of-type(4)").hide();
+
+            });
+
+            $('.button:nth-of-type(3)').click(function () {
+                $('.button').css({ "background-color": "transparent" })
+                $(this).css({ "background-color": "#5fb4c9" })
+                $(".cardwrap:nth-of-type(3)").fadeIn();
+                $(".cardwrap:nth-of-type(2)").hide();
+                $(".cardwrap:nth-of-type(4)").hide();
+            });
+
+            $('.button:nth-of-type(5)').click(function () {
+                $('.button').css({ "background-color": "transparent" })
+                $(this).css({ "background-color": "#5fb4c9" })
+                $(".cardwrap:nth-of-type(4)").fadeIn();
+                $(".cardwrap:nth-of-type(2)").hide();
+                $(".cardwrap:nth-of-type(3)").hide();
+            });
+
+
+        });
+
+        //
+        $(function () {
+            $('.char img').mouseenter(function () {
+                $(this).animate({
+                    'width': '120%',
+                    'height': '120%'
+                }, "slow")
+            });
+
+            $('.char img').mouseleave(function () {
+                $(this).animate({
+                    'width': '100%',
+                    'height': '100%'
+                }, "slow")
+            });
+
+        });
+
+
+        $(function () {
+            $('.prev').click(function () {
+                $('.slide li:last').prependTo('.slide');
+                $('.slide').css('margin-left', -1200);
+                $('.slide').stop().animate({ marginLeft: 0 }, 800);
+            });
+
+            $('.next').click(function () {
+                $('.slide').stop().animate({ marginLeft: -1200 }, 800, function () {
+                    $('.slide li:first').appendTo('.slide');
+                    $('.slide').css({ marginLeft: 0 });
+                });
+            });
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+    <div id="wrap" style=>
+        <header>
+
+
+            <div class="headertext">
+                <div class="logo"><img src="img/totorologosmall.png" alt=""></div>
+
+                <nav>
+                    <ul id="menu">
+                        <li class="first">
+                            미야자키 하야오
+                            <ul class="second">
+                                <li><a href="#">미야자키의 메세지</a></li>
+                                <li><a href="#">미야자키의 신념</a></li>
+                                <li><a href="#">미야자키 인물사진</a></li>
+                            </ul>
+                        </li>
+                        <li class="first">
+                            작품
+                            <ul class="second">
+                                <li><a href="#">그대들은 어떻게 살 것인가</a></li>
+                                <li><a href="#">벼랑위에 포뇨</a></li>
+                                <li><a href="#">고양이의 보은</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="first">
+                            지브리 파크
+                            <ul class="second">
+                                <li><a href="#">지브리 큰 창고</a></li>
+                                <li><a href="#">마녀의 계곡</a></li>
+                                <li><a href="#">청춘의 언덕</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </nav>
+
+
+
+                <div class="headerright">
+                    <a href="https://twitter.com/JP_GHIBLI"><img src="img/tiwtersmall.png" alt=""></a>
+                    <a href="#"><img src="img/pngwingsmall.png" alt=""></a>
+                </div>
+
+            </div>
+
+
+        </header>
+        <section class="section1">
+            <img src="img/hacumain.png" alt="#">
+            <div class="bluemove"></div>
+        </section>
+
+        <section class="section2">
+
+        </section>
+
+        <section class="audio"><audio src="sea.mp3" controls autoplay></audio>
+            <div style="padding: 40px;">
+                <p style="padding: 40px;
+                    ">"난 선물 포장지 개봉처럼 가슴이 두근거려!"</p>
+                <마녀배달부 키키 中>
+            </div>
+        </section>
+
+        <section class="section3">
+            <div class="director">
+                <div class="mseeage">
+                    <h1> 미야자키의 메세지</h1>
+
+                    <p style="text-align: center;">
+                        잃어버린 옛날과 온정에 대한 향수,<br>
+                        그리고 우리모두에게
+                        하나쯤은 있는 <br>트라우마를 치유하고 성장하는
+                        모습을 담아낸다.
+                        그의 작품에는 인내,견딤,수용을 중요한 주제로 삼는다.
+
+                    </p>
+                </div>
+
+                <div class="mseeage">
+                    <h1> 미야자키의 신념</h1>
+                    <p style="font-size: 16px;">
+                        “증오로 흐려지지 않은 눈으로 보아야 합니다.
+                        악에서 선을 보고 선에서 악을보라.
+                        <br>어느 쪽에도 서약하지 말고<br> 그 대신 둘 사이에 존재하는 균형을유지하겠다고 맹세하십시오.”
+                    </p>
+                </div>
+                <div class="mseeage">
+                    <h1> 감독 미야자키하야오</h1>
+                    <p style="font-size: 16px;">
+                        <img src="img/miyazaki.jpg" alt="">
+                    </p>
+                </div>
+            </div>
+            <!-- <div class="directorintro">
+                     <a href="#"><img src="img/miyazaki.jpg" alt=""></a>
+                </div> -->
+    </div>
+
+    </section>
+
+    <div id="intromove">
+        <section class="section4">
+
+            <div id="box">
+                <div class="inbox">
+                    <div class="textinbox1">
+                        <h1>마녀배달부 키키</h1>
+                    </div>
+                    <div class="textinbox2">
+                        <h3 style="color:#5fb4c9;">성장의 순간과 동심을 배달해드려요.</h3>
+                    </div>
+                    <div class="textinbox3">
+                        마녀들의 규칙, 낯선 마을에서 1년동안 살기. 열세 살 꼬마 마녀 키키는 검은 고양이 지지와 함께 빗자루 여행을 떠난다. 키키는 해안가에 위치한 마을 코리코에서
+                        '마녀배달부'로 일하게 되는데...
+
+                    </div>
+                </div>
+
+                <div class="inbox1"><img src="img/intromask1.png" alt="#" style="width: 100%;">
+                    <img src="img/intromask2.png" alt="#" class="mask2">
+                </div>
+            </div>
+
+            <div id="box">
+                <div class="inbox inboxright">
+
+                    <div class="textinbox1">
+                        <h1>센과 치히로의 행방불명</h1>
+                    </div>
+                    <div class="textinbox2">
+                        <h3 style="color:#5fb4c9;">인간사회의 및낯을<br>판타지로</h3>
+                    </div>
+                    <div class="textinbox3">
+                        금지된 세계의 문이 열렸다! 이사 가던 날,
+                        수상한 터널을 지나자 인간에게는 금지된 신들의 세계로
+                        가게 된다.
+                        인간 세계로 돌아가기 위해 사상 초유의 미션을 시작하는데…
+                    </div>
+                </div>
+                <div class="inbox1">
+                    <img src="img/senbgmask1.jpg.png" alt="#" style="width: 100%;">
+                    <img src="img/haqunu(2).jpg" alt="#" class="mask3">
+                    <img src="img/senminii.png" alt="#" class="mask5">
+                </div>
+
+
+            </div>
+
+            <div id="box">
+                <div class="inbox">
+                    <div class="textinbox1">
+                        <h1>이웃집 토토로</h1>
+                    </div>
+                    <div class="textinbox2" style="width: 253px;">
+                        <h3 style="color:#5fb4c9;">순수하고 맑은 영혼의 이야기</h3>
+                    </div>
+                    <div class="textinbox3">'사츠키'와 '메이'는 우연히 숲속에 살고 있는 신비로운 생명체 '토토로'를 만나 신비한 모험을 한다.
+                        그러던 중 '메이'가 행방불명 되고 사츠키는 메이를 찾아달라며 토토로에게 부탁을 하게 되고...</div>
+                </div>
+                <div class="inbox1"><img src="img/maybg.jpg.png" alt="#" style="width: 100%;">
+                    <img src="img/minitotoro.jpg.png" alt="#" class="mask4">
+
+                </div>
+            </div>
+
+    </div>
+    </section>
+
+    </section>
+
+    <section class="section6">
+        <div class="character">
+
+            <div class="button">
+                <h4 style="width:60%;
+                ">이웃집 토토로</h4>
+                <div class="buttonone">
+                    <img src="img/totoroone.jpg" alt="">
+
+                </div>
+            </div>
+            <div class="char"><img src="klkl.jpg" alt=""></div>
+            <div class="button">
+                <h4 style="width: 60%;">마녀배달부 키키</h4>
+                <div class="buttonone">
+                    <img src="img/zlzlsmallone.jpg" alt="">
+
+                </div>
+            </div>
+            <div class="char"><img src="img/ear.jpg" alt=""></div>
+            <div class="button">
+                <h4 style="width:60%;">센과 치히로의<br> 행방불명</h4>
+                <div class="buttonone">
+                    <img src="img/senmini.jpg" alt="">
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="cardwrap">
+            <div class="cha0 child">
+                <div id="wrapp">
+                    <div class="card">
+                        <div class="card-front"><img src="img/sablurbgleft.png" alt="">
+                            <img src="img/saleft.png" alt="" style="width: 376px; height: 326px;" class="sazl">
+                            <div class="satextbox">사츠키(さつき)</div>
+                        </div>
+                        <div class="card-back"><img src="img/saright.png" alt="">
+
+                            back</div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+            <div class="cha0 child">
+
+                <div id="wrapp">
+                    <div class="card">
+                        <div class="card-front"><img src="img/sarighttext.png" alt="">
+
+
+                        </div>
+                        <div class="card-back"><img src="img/saright.png" alt="style=" height: 100%;>
+
+                            back</div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="cardwrap">
+            <div class="cha0">
+                <div id="wrapp">
+                    <div class="card">
+                        <div class="card-front"><img src="imgcard/zlzleftlfront.png" alt="">
+                            <img src="imgcard/zlzlfacefront.png" alt="" style="width: 376px; height: 326px;"
+                                class="sazl">
+                            <div class="satextbox zlzl">키키(キキ)</div>
+                        </div>
+                        <div class="card-back"><img src="imgcard/zlzleftback.png" alt="">
+
+                            back</div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="cha0">
+
+                <div id="wrapp">
+                    <div class="card">
+                        <div class="card-front"><img src="imgcard/zlzlrightfront.png" alt="">
+
+
+                        </div>
+                        <div class="card-back"><img src="imgcard/zlzlrightback.png" alt="style=" height: 100%;>
+
+                            back</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cardwrap">
+            <div class="cha0">
+                <div id="wrapp">
+                    <div class="card">
+                        <div class="card-front"><img src="imgcard/haculeftlfront.png" alt="">
+                            <img src="imgcard/haculeftface.png" alt="" style="width: 376px; height: 326px;"
+                                class="sazl">
+                            <div class="satextbox hacutext" style="background-color: #e79eca;">하쿠(ハク)
+                            </div>
+                        </div>
+                        <div class="card-back"><img src="imgcard/haculeftback.png" alt="">
+
+                            back</div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="cha0">
+                <div id="wrapp">
+                    <div class="card">
+                        <div class="card-front"><img src="imgcard/hacurightfront.png" alt="">
+
+
+                        </div>
+                        <div class="card-back"><img src="imgcard/hacurightback.png" alt="">
+
+                            back</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="cha1">
+        </div>
+        <div class="cha1">
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="cha2">
+        </div>
+        <div class="cha2">
+        </div>
+
+
+
+
+
+    </section>
+
+    <section class="section5">
+        <div class="slidewrap">
+            <ul class="slide">
+                <li>
+                    <div class="realtextbox">
+                        <div class="munzismall">
+                            <img src="img/munzll.png" alt="">
+                            <p>어린이 도시</p>
+                        </div>
+                    </div>
+                    <div class="picwrap">
+                        <div><img src="img/bus.PNG" alt=""></div>
+                        <div><img src="img/bus2.PNG" alt=""></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="realtextbox" style="background-color: #ff8633;">
+                        <div class="munzismall">
+                            <img src="img/munzll.png" alt="">
+                            <p>고양이 놀이터</p>
+                        </div>
+                    </div>
+                    <div class="picwrapsmall">
+                        <div><img src="img/neko1.jpg" alt=""></div>
+                        <div><img src="img/neko2.jpg" alt=""></div>
+                        <div><img src="img/neko3.jpg" alt=""></div>
+                    </div>
+
+
+                </li>
+                <li>
+                    <div class="realtextbox" style="background-color:#b7e38e;">
+                        <div class="munzismall">
+                            <img src="img/munzll.png" alt="">
+                            <p>광장</p>
+                        </div>
+                    </div>
+                    <div class="picwrap">
+                        <div><img src="img/street2.jpg" alt=""></div>
+                        <div><img src="img/street1.jpg" alt=""></div>
+                    </div>
+                </li>
+            </ul>
+            <span class="prev"><img src="img/slideicon.png" alt=""></span>
+            <span class="next"><img src="img/slideiconright.png" alt=""></span>
+        </div>
+
+
+
+    </section>
+
+    <section class="section7">
+        <img src="img/dotorl.png" alt="">
+    </section>
+    <section class="section8"> 
+        <div><a href="#"><img src="img/totorolast.png" alt=""></a></div>
+        <div id="sitewrap">
+            <a href="https://www.ghibli-museum.jp/"><img src="img/sitelogo.png" alt=""><div>지브리 미술관</div>
+           
+            
+            <a href="https://ghibli-park.jp/"><img src="img/sitelogo2.png" alt=""><div>지브리 박물관</div></a></a>
+
+            <a href="https://www.ghibli.jp/"><img src="img/sitelogo3.png" alt=""><div>지브리 공식사이트</div></a></a>           
+         
+        </div>
+        <p>© 2005-2024 STUDIO GHIBLI Inc.</p>
+    </section>
+    <script>
+
+    </script>
+</body>
+
+</html>
