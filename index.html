@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ghiblistudio</title>
 
     <link rel="stylesheet" href="index.css">
 
@@ -14,6 +14,8 @@
         //
         $(function () {
             $(".cardwrap").not(":first").hide();
+
+            $('.button:first-of-type').css({ "background-color": "#5fb4c9" })
 
             $('.button:first-of-type').click(function () {
                 $('.button').css({ "background-color": "transparent" })
@@ -46,14 +48,14 @@
         //
         $(function () {
             $('.char img').mouseenter(function () {
-                $(this).animate({
+                $(this).stop() .animate({
                     'width': '120%',
                     'height': '120%'
                 }, "slow")
             });
 
             $('.char img').mouseleave(function () {
-                $(this).animate({
+                $(this).stop().animate({
                     'width': '100%',
                     'height': '100%'
                 }, "slow")
@@ -62,21 +64,111 @@
         });
 
 
-        $(function () {
-            $('.prev').click(function () {
-                $('.slide li:last').prependTo('.slide');
-                $('.slide').css('margin-left', -1200);
-                $('.slide').stop().animate({ marginLeft: 0 }, 800);
-            });
+        $(function () {            
 
-            $('.next').click(function () {
-                $('.slide').stop().animate({ marginLeft: -1200 }, 800, function () {
-                    $('.slide li:first').appendTo('.slide');
-                    $('.slide').css({ marginLeft: 0 });
+            if (window.matchMedia("(min-width: 1217px)").matches) {
+
+                $('.prev').click(function () {
+                    $('.slide li:last').prependTo('.slide');
+                    $('.slide').css('margin-left', -1200);
+                    $('.slide').stop().animate({ marginLeft: 0 }, 800);
                 });
-            });
+
+                $('.next').click(function () {
+                    $('.slide').stop().animate({ marginLeft: -1200 }, 800, function () {
+                        $('.slide li:first').appendTo('.slide');
+                        $('.slide').css({ marginLeft: 0 });
+                    });
+                });
+
+            } else {
+
+                let w=$(window).innerWidth();         
+
+                $('.prev').click(function () {
+                    $('.slide li:last').prependTo('.slide');
+                    $('.slide').css('margin-left', -w);
+                    $('.slide').stop().animate({ marginLeft: 0 }, 800);
+                });
+
+                $('.next').click(function () {
+                    $('.slide').stop().animate({ marginLeft: -w }, 800, function () {
+                        $('.slide li:first').appendTo('.slide');
+                        $('.slide').css({ marginLeft: 0 });
+                    });
+                });
+
+            }
+
 
         });
+$(function(){
+    
+
+    $(window).scroll(function(){
+        let ws=$(this).scrollTop();
+
+        let box1=$('.box').eq(0).offset().top;
+        if(ws>box1-500){
+            $('.box').eq(0).find(".inbox").css({"opacity":"1", transform:"translateX(0)"});
+        };
+
+        let box2=$('.box').eq(1).offset().top;
+        if(ws>box2-500){
+            $('.box').eq(1).find(".inbox").css({"opacity":"1", transform:"translateX(0)"});
+        }
+
+        let box3=$('.box').eq(2).offset().top;
+        if(ws>box3-500){
+            $('.box').eq(2).find(".inbox").css({"opacity":"1", transform:"translateX(0)"});
+        }
+    })
+});
+
+
+$(function(){
+    
+
+    $(window).scroll(function(){
+        let wsc=$(this).scrollTop();
+
+        let dir2=$('.mseeage').eq(0).offset().top;
+
+        if(wsc>dir2-600){
+            $('.mseeage').eq(0).css("opacity","1");
+        };
+
+        let dir3=$('.mseeage').eq(1).offset().top;
+        if(wsc>dir3-600){
+            $('.mseeage').eq(1).css("opacity","1");
+        }
+
+        let dir4=$('.mseeage').eq(2).offset().top;
+        if(wsc>dir4-600){
+            $('.mseeage').eq(2).css("opacity","1");
+        }
+    })
+});  
+
+$(function(){
+    $('#menu>li').mouseover(function(){
+    $(this).children('.second').stop().slideDown();
+    }).mouseout(function(){
+        $('.second').stop().slideUp();
+    });
+});
+$(function(){
+
+$(".headerright").click(function(){
+
+  $("#menu").slideToggle();
+
+  });
+
+});
+
+
+
 
 
     </script>
@@ -89,10 +181,10 @@
 
 
             <div class="headertext">
-                <div class="logo"><img src="img/totorologosmall.png" alt=""></div>
+                <div class="logo"><img src="img/totorologoo.png" alt=""></div>
 
                 <nav>
-                    <ul id="menu">
+                    <ul id="menu" style="cursor: pointer;">
                         <li class="first">
                             미야자키 하야오
                             <ul class="second">
@@ -127,6 +219,7 @@
                 <div class="headerright">
                     <a href="https://twitter.com/JP_GHIBLI"><img src="img/tiwtersmall.png" alt=""></a>
                     <a href="#"><img src="img/pngwingsmall.png" alt=""></a>
+                    <img src="img/i.png" alt="">
                 </div>
 
             </div>
@@ -143,22 +236,23 @@
         </section>
 
         <section class="audio"><audio src="sea.mp3" controls autoplay></audio>
-            <div style="padding: 40px;">
+            <div style="padding: 80px;">
                 <p style="padding: 40px;
                     ">"난 선물 포장지 개봉처럼 가슴이 두근거려!"</p>
                 <마녀배달부 키키 中>
             </div>
         </section>
-
+               
         <section class="section3">
+      <section class="sec3">감독소개</section>
             <div class="director">
                 <div class="mseeage">
                     <h1> 미야자키의 메세지</h1>
 
                     <p style="text-align: center;">
-                        잃어버린 옛날과 온정에 대한 향수,<br>
+                        잃어버린 옛날과 온정에 대한 향수,
                         그리고 우리모두에게
-                        하나쯤은 있는 <br>트라우마를 치유하고 성장하는
+                        하나쯤은 있는 트라우마를 치유하고 성장하는
                         모습을 담아낸다.
                         그의 작품에는 인내,견딤,수용을 중요한 주제로 삼는다.
 
@@ -166,16 +260,17 @@
                 </div>
 
                 <div class="mseeage">
+                    
                     <h1> 미야자키의 신념</h1>
-                    <p style="font-size: 16px;">
+                    <p>
                         “증오로 흐려지지 않은 눈으로 보아야 합니다.
                         악에서 선을 보고 선에서 악을보라.
-                        <br>어느 쪽에도 서약하지 말고<br> 그 대신 둘 사이에 존재하는 균형을유지하겠다고 맹세하십시오.”
+                        어느 쪽에도 서약하지 말고 그 대신 둘 사이에 존재하는 균형을유지하겠다고 맹세하십시오.”
                     </p>
                 </div>
                 <div class="mseeage">
                     <h1> 감독 미야자키하야오</h1>
-                    <p style="font-size: 16px;">
+                    <p >
                         <img src="img/miyazaki.jpg" alt="">
                     </p>
                 </div>
@@ -189,9 +284,11 @@
 
     <div id="intromove">
         <section class="section4">
-
-            <div id="box">
+            <section class="sec3">지브리 이야기</section>
+            <div class="box">
                 <div class="inbox">
+                    <div id="slideanimate">
+                     
                     <div class="textinbox1">
                         <h1>마녀배달부 키키</h1>
                     </div>
@@ -201,16 +298,16 @@
                     <div class="textinbox3">
                         마녀들의 규칙, 낯선 마을에서 1년동안 살기. 열세 살 꼬마 마녀 키키는 검은 고양이 지지와 함께 빗자루 여행을 떠난다. 키키는 해안가에 위치한 마을 코리코에서
                         '마녀배달부'로 일하게 되는데...
-
+                    </div>
                     </div>
                 </div>
 
                 <div class="inbox1"><img src="img/intromask1.png" alt="#" style="width: 100%;">
-                    <img src="img/intromask2.png" alt="#" class="mask2">
+                    <div class="c"><img src="img/intromask2.png" alt="#" class="mask2"></div>
                 </div>
             </div>
 
-            <div id="box">
+            <div class="box">
                 <div class="inbox inboxright">
 
                     <div class="textinbox1">
@@ -229,13 +326,13 @@
                 <div class="inbox1">
                     <img src="img/senbgmask1.jpg.png" alt="#" style="width: 100%;">
                     <img src="img/haqunu(2).jpg" alt="#" class="mask3">
-                    <img src="img/senminii.png" alt="#" class="mask5">
+                    <div class="d"><img src="img/senminii.png" alt="#" class="mask5"></div>
                 </div>
 
 
             </div>
 
-            <div id="box">
+            <div class="box">
                 <div class="inbox">
                     <div class="textinbox1">
                         <h1>이웃집 토토로</h1>
@@ -247,7 +344,7 @@
                         그러던 중 '메이'가 행방불명 되고 사츠키는 메이를 찾아달라며 토토로에게 부탁을 하게 되고...</div>
                 </div>
                 <div class="inbox1"><img src="img/maybg.jpg.png" alt="#" style="width: 100%;">
-                    <img src="img/minitotoro.jpg.png" alt="#" class="mask4">
+                    <div class="e"><img src="img/minitotoro.jpg.png" alt="#" class="mask4"></div>
 
                 </div>
             </div>
@@ -256,13 +353,13 @@
     </section>
 
     </section>
-
+  
     <section class="section6">
+ <section class="sec3" style="height: 30%;">지브리의 인물</section>
         <div class="character">
-
+ 
             <div class="button">
-                <h4 style="width:60%;
-                ">이웃집 토토로</h4>
+                <h4>이웃집 토토로</h4>
                 <div class="buttonone">
                     <img src="img/totoroone.jpg" alt="">
 
@@ -270,7 +367,7 @@
             </div>
             <div class="char"><img src="klkl.jpg" alt=""></div>
             <div class="button">
-                <h4 style="width: 60%;">마녀배달부 키키</h4>
+                <h4>마녀배달부 키키</h4>
                 <div class="buttonone">
                     <img src="img/zlzlsmallone.jpg" alt="">
 
@@ -278,7 +375,7 @@
             </div>
             <div class="char"><img src="img/ear.jpg" alt=""></div>
             <div class="button">
-                <h4 style="width:60%;">센과 치히로의<br> 행방불명</h4>
+                <h4 >센과 치히로의<br> 행방불명</h4>
                 <div class="buttonone">
                     <img src="img/senmini.jpg" alt="">
 
@@ -292,12 +389,12 @@
                 <div id="wrapp">
                     <div class="card">
                         <div class="card-front"><img src="img/sablurbgleft.png" alt="">
-                            <img src="img/saleft.png" alt="" style="width: 376px; height: 326px;" class="sazl">
+                            <img src="img/saleft.png" alt="" class="sazl">
                             <div class="satextbox">사츠키(さつき)</div>
                         </div>
                         <div class="card-back"><img src="img/saright.png" alt="">
 
-                            back</div>
+                           </div>
                     </div>
 
                 </div>
@@ -320,7 +417,7 @@
                         </div>
                         <div class="card-back"><img src="img/saright.png" alt="style=" height: 100%;>
 
-                            back</div>
+                           </div>
 
                     </div>
                 </div>
@@ -332,13 +429,13 @@
                 <div id="wrapp">
                     <div class="card">
                         <div class="card-front"><img src="imgcard/zlzleftlfront.png" alt="">
-                            <img src="imgcard/zlzlfacefront.png" alt="" style="width: 376px; height: 326px;"
+                            <img src="imgcard/zlzlfacefront.png" alt=""
                                 class="sazl">
                             <div class="satextbox zlzl">키키(キキ)</div>
                         </div>
                         <div class="card-back"><img src="imgcard/zlzleftback.png" alt="">
 
-                            back</div>
+                           </div>
                     </div>
 
                 </div>
@@ -357,7 +454,7 @@
                         </div>
                         <div class="card-back"><img src="imgcard/zlzlrightback.png" alt="style=" height: 100%;>
 
-                            back</div>
+                          </div>
 
                     </div>
                 </div>
@@ -368,14 +465,14 @@
                 <div id="wrapp">
                     <div class="card">
                         <div class="card-front"><img src="imgcard/haculeftlfront.png" alt="">
-                            <img src="imgcard/haculeftface.png" alt="" style="width: 376px; height: 326px;"
+                            <img src="imgcard/haculeftface.png" alt="" 
                                 class="sazl">
                             <div class="satextbox hacutext" style="background-color: #e79eca;">하쿠(ハク)
                             </div>
                         </div>
                         <div class="card-back"><img src="imgcard/haculeftback.png" alt="">
 
-                            back</div>
+                           </div>
                     </div>
 
                 </div>
@@ -392,7 +489,7 @@
                         </div>
                         <div class="card-back"><img src="imgcard/hacurightback.png" alt="">
 
-                            back</div>
+                          </div>
                     </div>
 
                 </div>
@@ -403,23 +500,7 @@
 
 
 
-        <div class="cha1">
-        </div>
-        <div class="cha1">
-        </div>
-
-
-
-
-
-
-
-
-
-        <div class="cha2">
-        </div>
-        <div class="cha2">
-        </div>
+      
 
 
 
@@ -428,6 +509,7 @@
     </section>
 
     <section class="section5">
+        <section class="sec3" style="height: 25%;">지브리 파크</section>
         <div class="slidewrap">
             <ul class="slide">
                 <li>
