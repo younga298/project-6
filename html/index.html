@@ -4,179 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ghiblistudio</title>
-
-    <link rel="stylesheet" href="index.css">
+    <title>ghibli studio</title>
+    
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <script>
-        //
-        $(function () {
-            $(".cardwrap").not(":first").hide();
-
-            $('.button:first-of-type').css({ "background-color": "#5fb4c9" })
-
-            $('.button:first-of-type').click(function () {
-                $('.button').css({ "background-color": "transparent" })
-                $(this).css({ "background-color": "#5fb4c9" })
-                $(".cardwrap:nth-of-type(2)").fadeIn('slow');
-                $(".cardwrap:nth-of-type(3)").hide();
-                $(".cardwrap:nth-of-type(4)").hide();
-
-            });
-
-            $('.button:nth-of-type(3)').click(function () {
-                $('.button').css({ "background-color": "transparent" })
-                $(this).css({ "background-color": "#5fb4c9" })
-                $(".cardwrap:nth-of-type(3)").fadeIn();
-                $(".cardwrap:nth-of-type(2)").hide();
-                $(".cardwrap:nth-of-type(4)").hide();
-            });
-
-            $('.button:nth-of-type(5)').click(function () {
-                $('.button').css({ "background-color": "transparent" })
-                $(this).css({ "background-color": "#5fb4c9" })
-                $(".cardwrap:nth-of-type(4)").fadeIn();
-                $(".cardwrap:nth-of-type(2)").hide();
-                $(".cardwrap:nth-of-type(3)").hide();
-            });
-
-
-        });
-
-        //
-        $(function () {
-            $('.char img').mouseenter(function () {
-                $(this).stop() .animate({
-                    'width': '120%',
-                    'height': '120%'
-                }, "slow")
-            });
-
-            $('.char img').mouseleave(function () {
-                $(this).stop().animate({
-                    'width': '100%',
-                    'height': '100%'
-                }, "slow")
-            });
-
-        });
-
-
-        $(function () {            
-
-            if (window.matchMedia("(min-width: 1217px)").matches) {
-
-                $('.prev').click(function () {
-                    $('.slide li:last').prependTo('.slide');
-                    $('.slide').css('margin-left', -1200);
-                    $('.slide').stop().animate({ marginLeft: 0 }, 800);
-                });
-
-                $('.next').click(function () {
-                    $('.slide').stop().animate({ marginLeft: -1200 }, 800, function () {
-                        $('.slide li:first').appendTo('.slide');
-                        $('.slide').css({ marginLeft: 0 });
-                    });
-                });
-
-            } else {
-
-                let w=$(window).innerWidth();         
-
-                $('.prev').click(function () {
-                    $('.slide li:last').prependTo('.slide');
-                    $('.slide').css('margin-left', -w);
-                    $('.slide').stop().animate({ marginLeft: 0 }, 800);
-                });
-
-                $('.next').click(function () {
-                    $('.slide').stop().animate({ marginLeft: -w }, 800, function () {
-                        $('.slide li:first').appendTo('.slide');
-                        $('.slide').css({ marginLeft: 0 });
-                    });
-                });
-
-            }
-
-
-        });
-$(function(){
-    
-
-    $(window).scroll(function(){
-        let ws=$(this).scrollTop();
-
-        let box1=$('.box').eq(0).offset().top;
-        if(ws>box1-500){
-            $('.box').eq(0).find(".inbox").css({"opacity":"1", transform:"translateX(0)"});
-        };
-
-        let box2=$('.box').eq(1).offset().top;
-        if(ws>box2-500){
-            $('.box').eq(1).find(".inbox").css({"opacity":"1", transform:"translateX(0)"});
-        }
-
-        let box3=$('.box').eq(2).offset().top;
-        if(ws>box3-500){
-            $('.box').eq(2).find(".inbox").css({"opacity":"1", transform:"translateX(0)"});
-        }
-    })
-});
-
-
-$(function(){
-    
-
-    $(window).scroll(function(){
-        let wsc=$(this).scrollTop();
-
-        let dir2=$('.mseeage').eq(0).offset().top;
-
-        if(wsc>dir2-600){
-            $('.mseeage').eq(0).css("opacity","1");
-        };
-
-        let dir3=$('.mseeage').eq(1).offset().top;
-        if(wsc>dir3-600){
-            $('.mseeage').eq(1).css("opacity","1");
-        }
-
-        let dir4=$('.mseeage').eq(2).offset().top;
-        if(wsc>dir4-600){
-            $('.mseeage').eq(2).css("opacity","1");
-        }
-    })
-});  
-
-$(function(){
-    $('#menu>li').mouseover(function(){
-    $(this).children('.second').stop().slideDown();
-    }).mouseout(function(){
-        $('.second').stop().slideUp();
-    });
-});
-$(function(){
-
-$(".headerright").click(function(){
-
-  $("#menu").slideToggle();
-
-  });
-
-});
-
-
-
-
-
-    </script>
+    <script src="js/main.js"></script>
+    <script src="js/header.js"></script>
 </head>
 
 <body>
 
-    <div id="wrap" style=>
+    <div id="wrap">
         <header>
 
 
@@ -242,9 +83,9 @@ $(".headerright").click(function(){
                 <마녀배달부 키키 中>
             </div>
         </section>
-               
+
         <section class="section3">
-      <section class="sec3">감독소개</section>
+            <section class="sec3">감독소개</section>
             <div class="director">
                 <div class="mseeage">
                     <h1> 미야자키의 메세지</h1>
@@ -260,7 +101,7 @@ $(".headerright").click(function(){
                 </div>
 
                 <div class="mseeage">
-                    
+
                     <h1> 미야자키의 신념</h1>
                     <p>
                         “증오로 흐려지지 않은 눈으로 보아야 합니다.
@@ -270,7 +111,7 @@ $(".headerright").click(function(){
                 </div>
                 <div class="mseeage">
                     <h1> 감독 미야자키하야오</h1>
-                    <p >
+                    <p>
                         <img src="img/miyazaki.jpg" alt="">
                     </p>
                 </div>
@@ -288,17 +129,17 @@ $(".headerright").click(function(){
             <div class="box">
                 <div class="inbox">
                     <div id="slideanimate">
-                     
-                    <div class="textinbox1">
-                        <h1>마녀배달부 키키</h1>
-                    </div>
-                    <div class="textinbox2">
-                        <h3 style="color:#5fb4c9;">성장의 순간과 동심을 배달해드려요.</h3>
-                    </div>
-                    <div class="textinbox3">
-                        마녀들의 규칙, 낯선 마을에서 1년동안 살기. 열세 살 꼬마 마녀 키키는 검은 고양이 지지와 함께 빗자루 여행을 떠난다. 키키는 해안가에 위치한 마을 코리코에서
-                        '마녀배달부'로 일하게 되는데...
-                    </div>
+
+                        <div class="textinbox1">
+                            <h1>마녀배달부 키키</h1>
+                        </div>
+                        <div class="textinbox2">
+                            <h3 style="color:#5fb4c9;">성장의 순간과 동심을 배달해드려요.</h3>
+                        </div>
+                        <div class="textinbox3">
+                            마녀들의 규칙, 낯선 마을에서 1년동안 살기. 열세 살 꼬마 마녀 키키는 검은 고양이 지지와 함께 빗자루 여행을 떠난다. 키키는 해안가에 위치한 마을 코리코에서
+                            '마녀배달부'로 일하게 되는데...
+                        </div>
                     </div>
                 </div>
 
@@ -353,11 +194,11 @@ $(".headerright").click(function(){
     </section>
 
     </section>
-  
+
     <section class="section6">
- <section class="sec3">지브리의 인물</section>
+        <section class="sec3">지브리의 인물</section>
         <div class="character">
- 
+
             <div class="button">
                 <h4>이웃집 토토로</h4>
                 <div class="buttonone">
@@ -365,7 +206,7 @@ $(".headerright").click(function(){
 
                 </div>
             </div>
-            <div class="char"><img src="klkl.jpg" alt=""></div>
+            <div class="char"><img src="img/klkl.jpg" alt=""></div>
             <div class="button">
                 <h4>마녀배달부 키키</h4>
                 <div class="buttonone">
@@ -375,7 +216,7 @@ $(".headerright").click(function(){
             </div>
             <div class="char"><img src="img/ear.jpg" alt=""></div>
             <div class="button">
-                <h4 >센과 치히로의<br> 행방불명</h4>
+                <h4>센과 치히로의<br> 행방불명</h4>
                 <div class="buttonone">
                     <img src="img/senmini.jpg" alt="">
 
@@ -394,7 +235,7 @@ $(".headerright").click(function(){
                         </div>
                         <div class="card-back"><img src="img/saright.png" alt="">
 
-                           </div>
+                        </div>
                     </div>
 
                 </div>
@@ -417,7 +258,7 @@ $(".headerright").click(function(){
                         </div>
                         <div class="card-back"><img src="img/saright.png" alt="style=" height: 100%;>
 
-                           </div>
+                        </div>
 
                     </div>
                 </div>
@@ -429,13 +270,12 @@ $(".headerright").click(function(){
                 <div id="wrapp">
                     <div class="card">
                         <div class="card-front"><img src="imgcard/zlzleftlfront.png" alt="">
-                            <img src="imgcard/zlzlfacefront.png" alt=""
-                                class="sazl">
+                            <img src="imgcard/zlzlfacefront.png" alt="" class="sazl">
                             <div class="satextbox zlzl">키키(キキ)</div>
                         </div>
                         <div class="card-back"><img src="imgcard/zlzleftback.png" alt="">
 
-                           </div>
+                        </div>
                     </div>
 
                 </div>
@@ -454,7 +294,7 @@ $(".headerright").click(function(){
                         </div>
                         <div class="card-back"><img src="imgcard/zlzlrightback.png" alt="style=" height: 100%;>
 
-                          </div>
+                        </div>
 
                     </div>
                 </div>
@@ -465,14 +305,13 @@ $(".headerright").click(function(){
                 <div id="wrapp">
                     <div class="card">
                         <div class="card-front"><img src="imgcard/haculeftlfront.png" alt="">
-                            <img src="imgcard/haculeftface.png" alt="" 
-                                class="sazl">
+                            <img src="imgcard/haculeftface.png" alt="" class="sazl">
                             <div class="satextbox hacutext" style="background-color: #e79eca;">하쿠(ハク)
                             </div>
                         </div>
                         <div class="card-back"><img src="imgcard/haculeftback.png" alt="">
 
-                           </div>
+                        </div>
                     </div>
 
                 </div>
@@ -489,7 +328,7 @@ $(".headerright").click(function(){
                         </div>
                         <div class="card-back"><img src="imgcard/hacurightback.png" alt="">
 
-                          </div>
+                        </div>
                     </div>
 
                 </div>
@@ -500,7 +339,7 @@ $(".headerright").click(function(){
 
 
 
-      
+
 
 
 
@@ -563,22 +402,26 @@ $(".headerright").click(function(){
     <section class="section7">
         <img src="img/dotorl.png" alt="">
     </section>
-    <section class="section8"> 
+    <section class="section8">
         <div><a href="#"><img src="img/totorolast.png" alt=""></a></div>
         <div id="sitewrap">
-            <a href="https://www.ghibli-museum.jp/"><img src="img/sitelogo.png" alt=""><div>지브리 미술관</div>
-           
-            
-            <a href="https://ghibli-park.jp/"><img src="img/sitelogo2.png" alt=""><div>지브리 박물관</div></a></a>
+            <a href="https://www.ghibli-museum.jp/"><img src="img/sitelogo.png" alt="">
+                <div>지브리 미술관</div>
 
-            <a href="https://www.ghibli.jp/"><img src="img/sitelogo3.png" alt=""><div>지브리 공식사이트</div></a></a>           
-         
+
+                <a href="https://ghibli-park.jp/"><img src="img/sitelogo2.png" alt="">
+                    <div>지브리 박물관</div>
+                </a>
+            </a>
+
+            <a href="https://www.ghibli.jp/"><img src="img/sitelogo3.png" alt="">
+                <div>지브리 공식사이트</div>
+            </a></a>
+
         </div>
         <p>© 2005-2024 STUDIO GHIBLI Inc.</p>
     </section>
-    <script>
 
-    </script>
 </body>
 
 </html>
