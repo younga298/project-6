@@ -41,10 +41,10 @@ margin-bottom: 33px;}
 .buttongroup {display: flex; cursor: pointer;}
 
 
-.buttongroup div:nth-child(1){border-radius: 9px;background-color:#60acbe; width: 70px; height: 45px;color: #fff;
+.buttongroup .bluebtn{border-radius: 9px;background-color:#60acbe; width: 70px; height: 45px;color: #fff;
     font-weight: bold;margin: 5px 4px 0px; padding: 12px 19px;border: 1px solid #5fb4c9; 
 }
-.buttongroup div:nth-child(2){border-radius: 9px; border: 1px solid #5fb4c9; width: 70px; height: 45px; color: #5fb4c9; font-weight: bold;margin: 5px 0px 0px; padding: 12px 19px;}
+.buttongroup .borderbtn{border-radius: 9px; border: 1px solid #5fb4c9; width: 70px; height: 45px; color: #5fb4c9; font-weight: bold;margin: 5px 0px 0px; padding: 12px 19px;}
 
 #sidebar{width: 292px; height:715px;
     padding-right: 15px;
@@ -54,7 +54,7 @@ overflow: hidden;
 }
 .bottom{width: 292px; height: 285px;        margin-top: 144px;}
 .bottom .sideimage{width: 242px; height: 125px; overflow: hidden;}
-.buttongroup div:nth-child(1):hover{background-color: #5fb4c9;}
+.buttongroup .bluebtn:hover{background-color: #5fb4c9;}
 
 
 .sideimage{width:242px; height: 299px; overflow: hidden; margin: 0 auto; margin-bottom: 16px; border: 1px solid #e5e5da;
@@ -88,4 +88,14 @@ justify-content: space-evenly;    align-items: center;}
         .section7{margin-top: -10px;}
 
         .buttons:hover{background-color: rgba(80, 151, 209, 0.3);}
+
+       .buttongroup .borderbtn:hover{background-color: rgba(80, 151, 209, 0.3);}
        
+       #box{width: 200px; height: 200px; background-color: red;  position: absolute;    top: 37%;
+        left: 37%;
+
+        margin-top: -100px; margin-left:-100px;  display: none;}
+
+       .sidetext h3:hover{text-decoration:underline;}
+       .sidetext h4:hover{text-decoration:underline;}
+       .sidetext h6:hover{text-decoration:underline;}
