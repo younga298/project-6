@@ -4,10 +4,11 @@ document.addEventListener('DOMContentLoaded',function(){
     var popupBox = document.getElementById('box');
 
 
-    calendarButton.addEventListener('mouseover',function(){
-        popupBox.style.display = 'block';
-    });
-    calendarButton.addEventListener('mouseout',function(){
-        popupBox.style.display='none';
+    calendarButton.addEventListener('click', function() {
+        if (popupBox.style.display === 'block') {
+            popupBox.style.display = 'none';
+        } else {
+            popupBox.style.display = 'block';
+        }
     });
 });
