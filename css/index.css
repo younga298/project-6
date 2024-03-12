@@ -246,7 +246,7 @@ border-radius: 508px;
     transform: translate(-50%, -50%); width: 80%;}
 
 .section6 .zlzl{background-color: #4a8a6d;}
-    #wrapp {
+    .wrapp {
     position: relative;
     width: 100%;
     height: 190px;
@@ -257,18 +257,18 @@ border-radius: 508px;
 
 }
 
-#wrapp .card {
+.wrapp .card {
     width: 100%;
     height: 100%;
     transition: all ease-in-out .5s;
     transform-style: preserve-3d;
 }
 
-#wrapp:hover .card {
+.wrapp:hover .card {
     transform: rotateY(180deg);
 }
 
-#wrapp .card > div {
+.wrapp .card > div {
     position: absolute;
     top: 0;
     left: 0;
@@ -280,12 +280,12 @@ border-radius: 508px;
     backface-visibility: hidden;
 }
 
-#wrapp .card .card-front {
+.wrapp .card .card-front {
    
     z-index: 10;
     text-align: center;}
 /* #wrapp .card .card-front .satextbox{position: absolute; bottom: 10px; left: 0;} */
-#wrapp .card .card-back {
+.wrapp .card .card-back {
 
     z-index: 5;
     transform: rotateY(180deg);
@@ -530,7 +530,7 @@ border-radius: 508px;
     transform: translate(-50%, -50%); width: 80%;}
 
 .section6 .zlzl{background-color: #4a8a6d;}
-    #wrapp {
+    .wrapp {
     position: relative;
     width: 100%;
     height: 440px;
@@ -541,18 +541,18 @@ border-radius: 508px;
 
 }
 
-#wrapp .card {
+.wrapp .card {
     width: 100%;
     height: 100%;
     transition: all ease-in-out .5s;
     transform-style: preserve-3d;
 }
 
-#wrapp:hover .card {
+.wrapp:hover .card {
     transform: rotateY(180deg);
 }
 
-#wrapp .card > div {
+.wrapp .card > div {
     position: absolute;
     top: 0;
     left: 0;
@@ -564,12 +564,12 @@ border-radius: 508px;
     backface-visibility: hidden;
 }
 
-#wrapp .card .card-front {
+.wrapp .card .card-front {
    
     z-index: 10;
     text-align: center;}
 /* #wrapp .card .card-front .satextbox{position: absolute; bottom: 10px; left: 0;} */
-#wrapp .card .card-back {
+.wrapp .card .card-back {
 
     z-index: 5;
     transform: rotateY(180deg);
@@ -656,10 +656,8 @@ border-radius: 508px;
        margin: 0 auto;
        margin-top: 403px;
            margin-bottom: 386px;
-       background-image: url(img/pngwing.com.png);
-       background-position: center;
-       background-size: contain;
-       background-repeat: no-repeat;
+     text-align: center;
+     
        }
        .audio{width: 100%; 
            text-align:center;}
@@ -881,7 +879,7 @@ border-radius: 508px;
        
        
        
-           #wrapp {
+           .wrapp {
            position: relative;
            width: 430px;
            height: 440px;
@@ -892,18 +890,18 @@ border-radius: 508px;
        
        }
        
-       #wrapp .card {
+       .wrapp .card {
            width: 100%;
            height: 100%;
            transition: all ease-in-out .5s;
            transform-style: preserve-3d;
        }
        
-       #wrapp:hover .card {
+       .wrapp:hover .card {
            transform: rotateY(180deg);
        }
        
-       #wrapp .card > div {
+       .wrapp .card > div {
            position: absolute;
            top: 0;
            left: 0;
@@ -915,12 +913,12 @@ border-radius: 508px;
            backface-visibility: hidden;
        }
        
-       #wrapp .card .card-front {
+       .wrapp .card .card-front {
            background-color: #f54;
            z-index: 10;
            text-align: center;}
-       #wrapp .card .card-front .satextbox{position: relative; bottom: 420px;}
-       #wrapp .card .card-back {
+       .wrapp .card .card-front .satextbox{position: relative; bottom: 420px;}
+       .wrapp .card .card-back {
            background-color: #ccc;
            z-index: 5;
            transform: rotateY(180deg);
