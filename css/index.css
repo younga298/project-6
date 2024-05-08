@@ -490,7 +490,7 @@ border-radius: 508px;
         background-repeat: no-repeat;}
 
 /*section6 지브리의 인물*/
-.section6{width:100%;height: 899;
+.section6{width:100%;height: 899px;
 }
 .character{width:83%; height:100px;margin: 0 auto;    display: flex;
     justify-content: space-between;}
